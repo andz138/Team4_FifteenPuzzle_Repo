@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifteen Puzzles</title>
+    <link rel="stylesheet" href="./fifteen.css">
+</head>
+
+<body>
+    <main class="container">
+        <section class="heading">
+            <h1>Fifteen Puzzles</h1>
+            <p>The goal of the fifteen puzzle is to un-jumble its fifteen squares by repeatedly making moves that slide
+                squares into the empty space. How quickly can you solve it?</p>
+        </section>
+        <section class="game">
+            <div id="gameContainer" class="game-container">
+            </div>
+            <button class="shuffle-btn">Shuffle</button>
+        </section>
+
+        <section class="popup hidden">
+            <h2>You Win!</h2>
+            <p><span id="moves"></span> moves</p>
+            <button class="restart-btn">Restart</button>
+        </section>
+
+        <section class="validator-buttons">
+            <a href="http://validator.w3.org/check/referer">
+                <img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/images/w3c-xhtml.png"
+                    alt="Valid XHTML 1.1" />
+            </a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/images/w3c-css.png"
+                    alt="Valid CSS" />
+            </a>
+            <a href="http://webster.cs.washington.edu/jslint?referer">
+                <img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/images/jslint.png"
+                    alt="JavaScript Lint" />
+            </a>
+        </section>
+    </main>
+    <script src="./fifteen.js"></script>
+</body>
+
+</html>
