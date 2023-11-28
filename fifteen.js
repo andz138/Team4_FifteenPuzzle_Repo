@@ -137,6 +137,28 @@ function initCells() {
   gameContainer.append(...cellHtml);
 }
 
+const backgroundSelector = document.getElementById("backgroundSelector");
+backgroundSelector.addEventListener("change", updateBackground);
+
+
+function updateBackground() {
+  const selectedBackground = backgroundSelector.value;
+  const cells = document.querySelectorAll(".game-cell");
+
+  cells.forEach(cell => {
+    if (cell.id !== 'cell-16') {
+      cell.style.backgroundImage = `url('./images/${selectedBackground}')`;
+    }
+  });
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  main();
+  backgroundSelector.value = "background1.jpg";
+  updateBackground(); 
+});
+
+
 function main() {
   const shuffleBtn = document.querySelector(".shuffle-btn");
   shuffleBtn.addEventListener("click", shuffleCells);

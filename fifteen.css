@@ -43,7 +43,7 @@
 .game-cell {
   transition: all 0.3s ease;
   border: 2px solid black;
-  background: url("./background.jpg");
+  background: url("./images/background1.jpg");
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -166,14 +166,61 @@ button {
   display: none;
 }
 
-.shuffle-btn {
-  color: green;
-  border: 1px solid green;
-}
-
 .validator-buttons {
   position: absolute;
   bottom: 0;
   right: 0;
   display: inline-flex;
 }
+
+#backgroundSelector {
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: lightblue;
+}
+
+#backgroundSelector:hover {
+  border-color: #888;
+}
+
+#backgroundSelector:focus {
+  border-color: #555;
+  outline: none; 
+}
+
+label {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333; 
+  background-color: lightblue; 
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: block; 
+  margin: 5px; 
+}
+
+.shuffle-btn {
+  font-family: Arial, sans-serif; 
+  font-size: 16px; 
+  color: #333;
+  background-color: lightblue; 
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px; 
+  cursor: pointer; 
+  transition: all 0.2s ease; 
+  display: inline-block;
+  margin: 5px; 
+  text-align: center; 
+}
+
+.shuffle-btn:hover {
+  border-color: #555;
+  outline: none; 
+}
+
