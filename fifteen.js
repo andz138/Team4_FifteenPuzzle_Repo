@@ -130,7 +130,7 @@ function initCells() {
   gameContainer.append(...cellHtml);
 }
 
-let isPageLoad = true, currentBackground;
+let isPageLoad = true
 
 const backgroundSelector = document.getElementById("backgroundSelector");
 backgroundSelector.addEventListener("change", updateBackground);
@@ -147,7 +147,6 @@ function updateCellBackgrounds(selectedBackground) {
 function updateBackground() {
   const selectedBackground = backgroundSelector.value;
   updateCellBackgrounds(selectedBackground);
-  currentBackground = selectedBackground;
 }
 
 function getRandomBackground() {
