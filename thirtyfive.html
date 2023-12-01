@@ -4,20 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nine Puzzles</title>
-    <link rel="stylesheet" href="./nine.css">
+    <title>ThirtyFive Puzzles</title>
+    <link rel="stylesheet" href="./thirtyfive.css">
 </head>
 
 <body>
     <main class="container">
         <section class="heading">
-            <h1>Fifteen Puzzles</h1>
-            <p>The goal of the fifteen puzzle is to un-jumble its fifteen squares by repeatedly making moves that slide
+            <h1>Thirty-Five Puzzles</h1>
+            <p>The goal of the thirty-five puzzle is to un-jumble its thirty-five squares by repeatedly making moves that slide
                 squares into the empty space. How quickly can you solve it?</p>
         </section>
         <section class="game">
 			<div id="gameSelector" class="game-selector">
-				<button class="fifteen-btn" onclick="window.location.href = 'fifteen.html';"> 15 Puzzle </button>
+				<button class="game-btn" onclick="window.location.href = 'eight.html';"> 8 Puzzle </button>
+				<br>
+				<button class="game-btn" onclick="window.location.href = 'fifteen.html';"> 15 Puzzle </button>
+				<br>
+				<button class="game-btn" onclick="window.location.href = 'twentyfour.html';"> 24 Puzzle </button>
 			</div>
             <label for="backgroundSelector">Choose a different background:</label>
             <select id="backgroundSelector">
@@ -27,9 +31,7 @@
                 <option value="background4.jpg">Background 4</option>
             </select>
         
-			<div id="gameSelector" class="game-selector">
-					<button class="test">15 Puzzle</button>
-			</div>
+			
 				
             <div id="gameContainer" class="game-container"></div>
 			
@@ -58,7 +60,7 @@
             </a>
         </section>
     </main>
-    <script src="./nine.js"></script>
+    <script src="./thirtyfive.js"></script>
 </body>
 
 </html>

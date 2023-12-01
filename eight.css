@@ -195,7 +195,7 @@ label {
   outline: none; 
 }
 
-.fifteen-btn{
+.game-btn{
 	font-family: Arial, sans-serif; 
   font-size: 16px; 
   color: #333;
@@ -209,6 +209,7 @@ label {
   margin: 5px; 
   text-align: center;
 }
+
 
 .game-selector{
 	position: absolute;

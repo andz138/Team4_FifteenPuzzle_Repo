@@ -194,3 +194,26 @@ label {
   outline: none; 
 }
 
+.game-btn{
+	font-family: Arial, sans-serif; 
+  font-size: 16px; 
+  color: #333;
+  background-color: lightblue; 
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px; 
+  cursor: pointer; 
+  transition: all 0.2s ease; 
+  display: inline-block;
+  margin: 5px; 
+  text-align: center;
+}
+
+
+.game-selector{
+	position: absolute;
+	left: 125px;
+	margin-right: 20px;
+	padding-right: 20px;
+}
+
