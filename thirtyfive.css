@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Courgette", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.heading {
+  text-align: center;
+}
+
+.heading h1 {
+  padding: 10px 0;
+  font-size: 32px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container {
+  display: grid;
+  width: 450px;
+  height: 450px;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  margin-right: 40px;
+  grid-template-columns: repeat(6, 75px);
+  grid-template-rows: repeat(6, 75px);
+  border-collapse: collapse;
+  transition: all 0.3s ease;
+}
+
+.game-cell {
+  transition: all 0.3s ease;
+  border: 2px solid black;
+  background: url("./images/background1.jpg");
+  background-size: 450px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-collapse: collapse;
+}
+
+.game-cell p {
+  padding: 5px 10px;
+  background: #ffffff55;
+  pointer-events: none;
+  font-size: 32pt; /* sosa edit - 32pt font */
+  font-family: sans-serif; /* sosa edit - sans-serif override */
+}
+
+.movablepiece {
+  border-color: red;       
+  color: #006600;         
+  text-decoration: underline; 
+}
+
+#cell-1 { background-position: 0 0; }
+#cell-2 { background-position: -75px 0; }
+#cell-3 { background-position: -150px 0; }
+#cell-4 { background-position: -225px 0; }
+#cell-5 { background-position: -300px 0; }
+#cell-6 { background-position: -375px 0; }
+#cell-7 { background-position: 0 -100px; }
+#cell-8 { background-position: -75px -75px; }
+#cell-9 { background-position: -150px -75px; }
+#cell-10 { background-position: -225px -75px; }
+#cell-11{ background-position: -300px -75px; }
+#cell-12{ background-position: -375px -75px; }
+#cell-13{ background-position: 0 -150px; }
+#cell-14{ background-position: -75px -150px; }
+#cell-15{ background-position: -150px -150px; }
+#cell-16{ background-position: -225px -150px; }
+#cell-17{ background-position: -300px -150px; }
+#cell-18{ background-position: -375px -150px; }
+#cell-19{ background-position: 0 -225px; }
+#cell-20{ background-position: -75px -225px; }
+#cell-21{ background-position: -150px -225px; }
+#cell-22{ background-position: -225px -225px; }
+#cell-23{ background-position: -300px -225px; }
+#cell-24{ background-position: -375px -225px; }
+#cell-25 { background-position: 0 -300px; }
+#cell-26{ background-position: -75px -300px; }
+#cell-27{ background-position: -150px -300px; }
+#cell-28{ background-position: -225px -300px; }
+#cell-29{ background-position: -300px -300px; }
+#cell-30{ background-position: -375px -300px; }
+#cell-31 { background-position: 0 -375px; }
+#cell-32 { background-position: -75px -375px; }
+#cell-33 { background-position: -150px -375px; }
+#cell-34 { background-position: -225px -375px; }
+#cell-35 { background-position: -300px -375px; }
+#cell-36{  
+	background: none;
+	border: none; 
+}
+
+  border: none;
+}
+
+.popup {
+  position: absolute;
+  z-index: 99;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px 0;
+  border-radius: 5px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: green;
+  color: white;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+#moves {
+  font-size: 64px;
+}
+
+.popup button {
+  margin-top: 20px;
+}
+
+.popup button:hover {
+  background-color: white;
+  color: green;
+}
+
+button {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid white;
+  color: white;
+  cursor: pointer;
+  background: none;
+  transition: all 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.validator-buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+}
+
+#backgroundSelector {
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: lightblue;
+}
+
+#backgroundSelector:hover {
+  border-color: #888;
+}
+
+#backgroundSelector:focus {
+  border-color: #555;
+  outline: none; 
+}
+
+label {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333; 
+  background-color: lightblue; 
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: block; 
+  margin: 5px; 
+}
+
+.shuffle-btn, .cheat-btn {
+  font-family: Arial, sans-serif; 
+  font-size: 16px; 
+  color: #333;
+  background-color: lightblue; 
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px; 
+  cursor: pointer; 
+  transition: all 0.2s ease; 
+  display: inline-block;
+  margin: 5px; 
+  text-align: center; 
+}
+
+.shuffle-btn:hover, .cheat-btn:hover {
+  border-color: #555;
+  outline: none; 
+}
+
+.game-btn{
+	font-family: Arial, sans-serif; 
+  font-size: 16px; 
+  color: #333;
+  background-color: lightblue; 
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px; 
+  cursor: pointer; 
+  transition: all 0.2s ease; 
+  display: inline-block;
+  margin: 5px; 
+  text-align: center;
+}
+
+
+.game-selector{
+	position: absolute;
+	left: 125px;
+	margin-right: 20px;
+	padding-right: 20px;
+}
+
