@@ -2,7 +2,6 @@ const gameContainer = document.getElementById("gameContainer");
 const movesCount = document.getElementById("moves");
 const popup = document.querySelector(".popup");
 let moves = 0;
-
 let gameState = [
   [1, 2, 3, 4],
   [5, 6, 7, 8],
@@ -73,8 +72,6 @@ function handleCellClick(event) {
   if (valid) {
     moves++;
     const emptyElem = document.querySelector(".empty-cell");
-
-    // swap the element with the empty cell
     [
       gameState[currentCell[0]][currentCell[1]],
       gameState[emptyCell[0]][emptyCell[1]],
@@ -97,18 +94,14 @@ function handleCellClick(event) {
   }
 }
 
-function addBorder(event) {
+function handleCellHover(event) {
   if (checkValidCell(event).valid) {
-    event.target.classList.add("movablepiece");
+    event.target.classList.toggle("movablepiece", event.type === "mouseover");
   }
 }
 
-function removeBorder(event) {
-  event.target.classList.remove("movablepiece");
-}
-
-function createCell(n) {
-  let cell = document.createElement("div");
+function createCellElement(n) {
+  const cell = document.createElement("div");
   cell.id = `cell-${Number(n) ? n : 16}`;
   cell.dataset.tag = n;
   cell.classList.add("game-cell");
@@ -116,8 +109,8 @@ function createCell(n) {
 
   if (Number(n)) {
     cell.addEventListener("click", handleCellClick);
-    cell.addEventListener("mouseover", addBorder);
-    cell.addEventListener("mouseout", removeBorder);
+    cell.addEventListener("mouseover", handleCellHover);
+    cell.addEventListener("mouseout", handleCellHover);
   } else {
     cell.classList.add("empty-cell");
   }
@@ -130,46 +123,72 @@ function initCells() {
   const cellHtml = [];
   gameState.forEach((row) => {
     row.forEach((cell) => {
-      cellHtml.push(createCell(cell));
+      cellHtml.push(createCellElement(cell));
     });
   });
 
   gameContainer.append(...cellHtml);
 }
 
+let isPageLoad = true
+
 const backgroundSelector = document.getElementById("backgroundSelector");
 backgroundSelector.addEventListener("change", updateBackground);
 
-
-function updateBackground() {
-  const selectedBackground = backgroundSelector.value;
+function updateCellBackgrounds(selectedBackground) {
   const cells = document.querySelectorAll(".game-cell");
-
-  cells.forEach(cell => {
-    if (cell.id !== 'cell-16') {
+  cells.forEach((cell) => {
+    if (cell.id !== "cell-16") {
       cell.style.backgroundImage = `url('./images/${selectedBackground}')`;
     }
   });
 }
 
+function updateBackground() {
+  const selectedBackground = backgroundSelector.value;
+  updateCellBackgrounds(selectedBackground);
+}
+
+function getRandomBackground() {
+  const backgrounds = ["background1.jpg", "background2.jpg", "background3.jpg", "background4.jpg"];
+  return backgrounds[Math.floor(Math.random() * backgrounds.length)];
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   main();
-  backgroundSelector.value = "background1.jpg";
-  updateBackground(); 
+  if (isPageLoad) {
+    backgroundSelector.value = getRandomBackground();
+  }
+  updateBackground();
 });
-
 
 function main() {
   const shuffleBtn = document.querySelector(".shuffle-btn");
-  shuffleBtn.addEventListener("click", shuffleCells);
+  shuffleBtn.addEventListener("click", () => {
+    isPageLoad = false;
+    shuffleCells();
+    updateBackground();
+  });
 
   const restartBtn = document.querySelector(".restart-btn");
   restartBtn.addEventListener("click", () => {
+    isPageLoad = false;
     popup.classList.add("hidden");
     shuffleCells();
+    updateBackground();
+  });
+
+  const cheatBtn = document.querySelector(".cheat-btn");
+  cheatBtn.addEventListener("click", () => {
+    gameState = [
+      [1, 2, 3, 4],
+      [5, 6, 7, 8],
+      [9, 10, 11, 12],
+      [13, 14, 15, ""],
+    ];
+    initCells();
+    updateBackground()
   });
 
   initCells();
 }
-
-window.addEventListener("DOMContentLoaded", main);
