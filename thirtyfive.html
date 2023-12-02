@@ -10,12 +10,12 @@
 
 <body>
     <main class="container">
-        <section class="heading">
+        <div class="heading">
             <h1>Thirty-Five Puzzles</h1>
             <p>The goal of the thirty-five puzzle is to un-jumble its thirty-five squares by repeatedly making moves that slide
                 squares into the empty space. How quickly can you solve it?</p>
-        </section>
-        <section class="game">
+        </div>
+        <div class="game">
 			<div id="gameSelector" class="game-selector">
 				<button class="game-btn" onclick="window.location.href = 'eight.html';"> 8 Puzzle </button>
 				<br>
@@ -37,24 +37,24 @@
 			
             <button class="shuffle-btn">Shuffle</button>
             <button class="cheat-btn">Cheat</button> <!-- Add this line -->
-        </section>
+        </div>
         
-        <section class="popup hidden">
+        <div class="popup hidden">
             <h2>You Win!</h2>
             <p><span id="moves"></span> moves</p>
             <button class="restart-btn">Restart</button>
-        </section>
+        </div>
 
-        <section class="validator-buttons">
+        <div class="validator-buttons">
             <a href="https://validator.w3.org/check?uri=https://codd.cs.gsu.edu/~asosa7/Work/PW/3/thirtyfive.html">
                 <img src="./images/w3c-xhtml.png"
-                    alt="Valid XHTML 1.1" />
+                    alt="Valid XHTML 1.1" >
             </a>
             <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://codd.cs.gsu.edu/~asosa7/Work/PW/3/thirtyfive.css">
                 <img src="./images/w3c-css.png"
-                    alt="Valid CSS" />
+                    alt="Valid CSS" >
             </a>
-        </section>
+        </div>
     </main>
     <script src="./thirtyfive.js"></script>
 </body>
